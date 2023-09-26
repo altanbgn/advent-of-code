@@ -1,5 +1,3 @@
-// Will refactor this later along with day5b
-
 #[derive(Debug)]
 struct Command {
     quantity: u32,
@@ -56,10 +54,16 @@ fn cargo_parser(cargo_string: &str) -> Vec<Vec<char>> {
 }
 
 fn finishing_touch (command: &Command, parsed_cargo: &mut Vec<Vec<char>>) {
+    let mut crate_memory: Vec<char> = vec![];
+
     for _ in 0..command.quantity {
         let popped_element = parsed_cargo[command.from as usize - 1].pop().unwrap();
-        parsed_cargo[command.to as usize - 1].push(popped_element);
+        crate_memory.push(popped_element);
     }
+
+    crate_memory.reverse();
+
+    parsed_cargo[command.to as usize - 1].append(&mut crate_memory);
 }
 
 fn main() {
