@@ -13,6 +13,7 @@ fn main() {
 
         let mut passed: bool = true;
 
+
         for i in 0..14 {
             for j in i..14 {
                 if &buffer[index + i] == &buffer[index + j] && i != j {
