@@ -4,16 +4,19 @@ fn main() {
 
     // Parsing from input.txt
     include_str!("../input.txt").split("\n").for_each(|x| {
-        let line: Vec<&str> = x.split("   ").collect();
-        match line[0].parse() {
-            Ok(first_number) => numbers.insert(first_number, 0),
-            Err(..) => return,
-        };
+        let line: Vec<&str> = x.split_whitespace().collect();
 
-        match line[1].parse() {
-            Ok(second_number) => second_column.push(second_number),
-            Err(..) => return,
-        };
+        if line.len() > 0 {
+            match line[0].parse() {
+                Ok(first_number) => numbers.insert(first_number, 0),
+                Err(..) => return,
+            };
+
+            match line[1].parse() {
+                Ok(second_number) => second_column.push(second_number),
+                Err(..) => return,
+            };
+        }
     });
 
     // Iterate through second column and count the numbers
