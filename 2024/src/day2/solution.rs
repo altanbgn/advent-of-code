@@ -1,7 +1,23 @@
-fn main() {
-    let mut safe_lines = -1;
+use crate::utils::printAnswer;
 
-    include_str!("../input.txt").split("\n").for_each(|x| {
+pub fn section_a() {
+    let mut safe_lines = -2;
+
+    include_str!("./input.txt").split("\n").for_each(|x| {
+        let list: Vec<&str> = x.split_whitespace().collect();
+
+        if check_safe(list.clone()) == true {
+            safe_lines += 1;
+        }
+    });
+
+    printAnswer(2, "A", safe_lines);
+}
+
+pub fn section_b() {
+    let mut safe_lines = -2;
+
+    include_str!("./input.txt").split("\n").for_each(|x| {
         let list: Vec<&str> = x.split_whitespace().collect();
 
         if check_safe(list.clone()) == true {
@@ -11,7 +27,6 @@ fn main() {
                 let mut new_list = list.clone();
                 new_list.remove(n);
                 if check_safe(new_list.clone()) == true {
-                    println!("{:?}", new_list);
                     safe_lines += 1;
                     break;
                 }
@@ -19,7 +34,7 @@ fn main() {
         };
     });
 
-    println!("{:?}", safe_lines);
+    printAnswer(2, "B", safe_lines);
 }
 
 fn check_safe(list: Vec<&str>) -> bool {
