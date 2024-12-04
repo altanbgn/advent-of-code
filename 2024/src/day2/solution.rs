@@ -1,4 +1,4 @@
-use crate::utils::printAnswer;
+use crate::utils::print_answer;
 
 pub fn section_a() {
     let mut safe_lines = -2;
@@ -11,7 +11,7 @@ pub fn section_a() {
         }
     });
 
-    printAnswer(2, "A", safe_lines);
+    print_answer(2, "A", safe_lines);
 }
 
 pub fn section_b() {
@@ -34,7 +34,7 @@ pub fn section_b() {
         };
     });
 
-    printAnswer(2, "B", safe_lines);
+    print_answer(2, "B", safe_lines);
 }
 
 fn check_safe(list: Vec<&str>) -> bool {

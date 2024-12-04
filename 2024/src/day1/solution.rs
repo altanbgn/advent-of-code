@@ -1,4 +1,4 @@
-use crate::utils::printAnswer;
+use crate::utils::print_answer;
 
 pub fn section_a() {
     let mut left_array: Vec<i32> = vec![];
@@ -28,7 +28,7 @@ pub fn section_a() {
         sum += (left_array[index] - right_array[index]).abs();
     }
 
-    printAnswer(1, "A", sum);
+    print_answer(1, "A", sum);
 }
 
 pub fn section_b() {
@@ -65,5 +65,5 @@ pub fn section_b() {
         sum += x.0 * x.1;
     });
 
-    printAnswer(1, "B", sum);
+    print_answer(1, "B", sum);
 }

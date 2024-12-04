@@ -1,4 +1,4 @@
-use crate::utils::printAnswer;
+use crate::utils::print_answer;
 use regex::Regex;
 
 pub fn section_a() {
@@ -12,7 +12,7 @@ pub fn section_a() {
         sum += first_number * second_number;
     });
 
-    printAnswer(3, "A", sum);
+    print_answer(3, "A", sum);
 }
 
 pub fn section_b() {
@@ -35,5 +35,5 @@ pub fn section_b() {
         }
     });
 
-    printAnswer(3, "B", sum);
+    print_answer(3, "B", sum);
 }
