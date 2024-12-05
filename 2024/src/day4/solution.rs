@@ -3,7 +3,7 @@ use crate::utils::print_answer;
 pub fn section_a() {
     // TODO: try other method
     let mut word = [0; 4];
-    let input_matrix: Vec<Vec<char>> = include_str!("./input-text.txt")
+    let input_matrix: Vec<Vec<char>> = include_str!("./input.txt")
         .split_whitespace()
         .map(|x| x.chars().collect::<Vec<char>>())
         .collect::<Vec<Vec<char>>>();
